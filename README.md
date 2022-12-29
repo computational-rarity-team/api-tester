@@ -29,4 +29,4 @@ Then take the User-Token from Discogs and run `export USER_TOKEN="whatever-the-t
 
 ### run Flask
 
-Finally run Flask by going into the directory of the repo and running `flask run`s
+Finally run Flask by going into the directory of the repo and running `flask run`
