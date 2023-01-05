@@ -15,3 +15,7 @@ def find_result():
     results = d.search('SHAKER LOOPS', type='release')
     for release in results:
         return release.title
+
+@app.route("/home"):
+def index():
+    pass
