@@ -7,6 +7,7 @@ import discogs_client
 app = Flask(__name__)
 
 user_token = os.environ.get("USER_TOKEN")
+print(user_token)
 
 d = discogs_client.Client('ExampleApplication/0.1', user_token=user_token)
 
@@ -16,6 +17,8 @@ def find_result():
     for release in results:
         return release.title
 
-@app.route("/home"):
+
+@app.route("/home")
 def index():
     pass
+
