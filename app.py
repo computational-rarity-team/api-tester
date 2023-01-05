@@ -17,14 +17,6 @@ def find_result():
     for release in results:
         return release.title
 
-<<<<<<< HEAD
-
 @app.route("/home")
 def index():
     pass
-
-=======
-@app.route("/home")
-def index():
-    pass
->>>>>>> 2050b1a95c573fd27d67660c638c2454210bd43e
