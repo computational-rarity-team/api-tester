@@ -16,6 +16,6 @@ def find_result():
     for release in results:
         return release.title
 
-@app.route("/home"):
+@app.route("/home")
 def index():
     pass
