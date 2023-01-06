@@ -13,9 +13,17 @@ d = discogs_client.Client('ExampleApplication/0.1', user_token=user_token)
 @app.route("/", methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        user_input = request.form['user_input']
+        catnum = request.form['catnum']
+        artist = request.form['artist']
+        title = request.form['title']
+        label = request.form['label']
+        media = request.form['format']
+        rating = request.form['rating']
+        release = request.form['release']
+        release_id = request.form['release_id']
+
         # Make a request to the API using the user's input
-        results = d.search(user_input, type='release')
+        results = d.search(title, release=release, artist=artist, label=label, format=media, catno=catnum, rating=rating)
         #for release in results:
         #    return release.title
         return render_template('results.html', results=results)
