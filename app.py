@@ -1,7 +1,6 @@
-from flask import Flask
-
+from flask import Flask, request, render_template
+import requests
 import os
-
 import discogs_client
 
 app = Flask(__name__)
@@ -11,12 +10,13 @@ print(user_token)
 
 d = discogs_client.Client('ExampleApplication/0.1', user_token=user_token)
 
-@app.route("/")
-def find_result():
-    results = d.search('SHAKER LOOPS', type='release')
-    for release in results:
-        return release.title
-
-@app.route("/home")
+@app.route("/", methods=['GET', 'POST'])
 def index():
-    pass
+    if request.method == 'POST':
+        user_input = request.form['user_input']
+        # Make a request to the API using the user's input
+        results = d.search(user_input, type='release')
+        #for release in results:
+        #    return release.title
+        return render_template('results.html', results=results)
+    return render_template('index.html')
