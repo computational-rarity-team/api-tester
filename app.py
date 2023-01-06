@@ -7,7 +7,6 @@ import discogs_client
 app = Flask(__name__)
 app.config.from_object(__name__)
 freezer = Freezer(app)
-app.config['FREEZER_DESTINATION'] = "docs"
 
 user_token = os.environ.get("USER_TOKEN")
 
