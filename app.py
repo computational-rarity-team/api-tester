@@ -1,17 +1,11 @@
 from flask import Flask, request, render_template
-from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 import requests
 import os, sys
 import discogs_client
 
-DEBUG = True
-FLATPAGES_AUTO_RELOAD = DEBUG
-FLATPAGES_EXTENSION = '.md'
-
 app = Flask(__name__)
 app.config.from_object(__name__)
-pages = FlatPages(app)
 freezer = Freezer(app)
 
 user_token = os.environ.get("USER_TOKEN")
@@ -36,17 +30,6 @@ def index():
         #    return release.title
         return render_template('results.html', results=results)
     return render_template('index.html')
-
-# URL Routing - Flat Pages
-# Retrieves the page path and
-@app.route("/<path:path>/")
-def page(path):
-    page = pages.get_or_404(path)
-    return render_template(page)
-
-@freezer.register_generator
-def page():
-    yield {'path': 'index.html'}
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
