@@ -5,6 +5,9 @@ name: Deploy to heroku.
 on:
   push:
     branches: [static-discogs]
+    
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 # Your workflows jobs.
 jobs:
