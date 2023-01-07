@@ -1,11 +1,12 @@
 from flask import Flask, request, render_template
 from flask_frozen import Freezer
-import requests
 import os, sys
 import discogs_client
 
 app = Flask(__name__)
 app.config.from_object(__name__)
+
+app.config['FREEZER_RELATIVE_URLS'] = True
 freezer = Freezer(app)
 
 user_token = os.environ.get("USER_TOKEN")
@@ -34,6 +35,6 @@ def results():
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "build":
-        freezer.freeze()
+        freezer.run(debug=True)
     else:
         app.run()
