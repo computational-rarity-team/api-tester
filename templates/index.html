@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block title %} <title> Musicbrainz Home page </title> {% endblock%}
+
+
+{% block content %}
+<h1> Hi user </h1>
+	<form>
+		<label for="search"> Search catalog: </label>
+		<input type="search" name="search" id="search">
+		<input type="submit" name="submit">
+	</form>
+{% endblock %}
+
+{% block footer %}
+<footer> ... </footer>
+{% endblock %}
+
+{% block script %} <script type="text/javascript"> window.onload = () => console.log('Document ready!'); </script> {% endblock %}

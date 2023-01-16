@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import render_template
 
 import os
 import urllib3
@@ -13,14 +14,18 @@ r = http.request('GET', 'https://musicbrainz.org/ws/2/') # grab music informatio
 
 d = discogs_client.Client('ExampleApplication/0.1', user_token=user_token)
 
+# @app.route("/")
+# def find_result():
+#     results = d.search('SHAKER LOOPS', type='release')
+
+#     for release in results:
+#         return release.title
+
+
 @app.route("/")
-def find_result():
-    results = d.search('SHAKER LOOPS', type='release')
-
-    for release in results:
-        return release.title
-
-
-@app.route("/home")
 def index():
-    pass
+    return render_template('/index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+    
