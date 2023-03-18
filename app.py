@@ -18,11 +18,12 @@ d = discogs_client.Client('ExampleApplication/0.1', user_token=user_token)
 # def find_result():
 #     results = d.search('SHAKER LOOPS', type='release')
 
-#     for release in results:
-#         return release.title
+    # for release in results:
+    #     return release.title
 
 class MusicApiView(MethodView):
     def get(self):
+        print(request)
         content = {}
         return render_template("index.html", content=content)
 
@@ -30,8 +31,9 @@ class MusicApiView(MethodView):
         data = request.form.get("title")
         music_type = ""
         results = d.search(data, type='release')
-        print(result)
-        redirect(url_for("/"))
+        print(type(results))
+        return render_template("index.html", content=results)
+        # return redirect(url_for("/music/"))
 
 
 

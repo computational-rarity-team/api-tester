@@ -1,4 +1,4 @@
-@font-face{
+/*@font-face{
 	font-family: 'Open Sans';
 	src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap')
 	font-weight: normal;
@@ -9,7 +9,7 @@
 	padding: 1rem;
 	font-family: 'Open Sans', 'Lato', 'sans-serif', 'serif' 'Arial', 'Helvetica';
 
-}
+}*/
 
 
 
@@ -95,28 +95,10 @@ input {
 	margin-top: -3%;
 }
 
-.celsius {
-	font-size: 1.75vw;
-}
 
-.delete-button {
-	background-color: transparent;
-	width: 1.5vw;
-	height: 1vw;
-	margin: 0;
-	padding: 0;
-	border: none;
-	color: white;
-}
 
-.day > .delete-wrapper > form > .delete-button {
-	color: black !important;
-}
 
-.delete-button:focus, .delete-button:active {
-	border: none;
-	outline: none;
-}
+
 
 ::-webkit-scrollbar {
   width: 0.5vw;
