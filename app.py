@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, request, redirect, render_template, url_for
 from flask.views import MethodView
 
 import os
@@ -24,18 +23,19 @@ d = discogs_client.Client('ExampleApplication/0.1', user_token=user_token)
 
 class MusicApiView(MethodView):
     def get(self):
-        # print(*db.session.query(RegexModel).all())
-        return render_template("index.html")
+        content = {}
+        return render_template("index.html", content=content)
 
     def post(self):
-        regex, text = request.form.get("regex"), request.form.get("text")
-        pattern = re.compile(regex)
-        result, post = bool(pattern.match(text)), True
-        obj = RegexModel(regex=regex, text=text, result=result)
-        db.session.add(obj)
-        db.session.commit()
+        data = request.form.get("title")
+        music_type = ""
+        results = d.search(data, type='release')
+        print(result)
+        redirect(url_for("/"))
 
 
+
+app.add_url_rule('/music/', view_func=MusicApiView.as_view('/music/'))
 @app.route("/")
 def index():
     return render_template('/index.html')

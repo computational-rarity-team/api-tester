@@ -4,6 +4,14 @@
 
 {% block content %}
 <h1> Hi user </h1>
+
+<div class="form">
+    <form action="/" method="POST">
+        <input type="text" placeholder="Search catalog:" name="title">
+        <button type="submit" class="submit-button">Find</button>
+    </form>
+
+</div>
 	<form>
 		<label for="search"> Search catalog: </label>
 		<input type="search" name="search" id="search">
