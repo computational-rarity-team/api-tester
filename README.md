@@ -25,7 +25,7 @@ Finally run `pip3 install -r requirements.txt` or similar to get all libraries i
 
 ### export the token variable
 
-Then take the User-Token from Discogs and run `export USER_TOKEN="whatever-the-token-is"` with the token inside the quotation marks.
+Then take the User-Token from Discogs and run `export USER_TOKEN="whatever-the-token-is"` with the token inside the quotation marks. Windows user USE `SET USER_TOKEN="current_token"`
 
 ### run Flask
 

@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import render_template
+from flask.views import MethodView
 
 import os
 import urllib3
@@ -20,6 +21,19 @@ d = discogs_client.Client('ExampleApplication/0.1', user_token=user_token)
 
 #     for release in results:
 #         return release.title
+
+class MusicApiView(MethodView):
+    def get(self):
+        # print(*db.session.query(RegexModel).all())
+        return render_template("index.html")
+
+    def post(self):
+        regex, text = request.form.get("regex"), request.form.get("text")
+        pattern = re.compile(regex)
+        result, post = bool(pattern.match(text)), True
+        obj = RegexModel(regex=regex, text=text, result=result)
+        db.session.add(obj)
+        db.session.commit()
 
 
 @app.route("/")

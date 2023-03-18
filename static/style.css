@@ -21,3 +21,117 @@ form{
 input[type=submit]:hover{
 	cursor: pointer;
 }
+
+
+
+html, body {
+	min-height: 100vh;
+	background: linear-gradient(#836273, #373252);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	padding: 0;
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.form {
+	margin-top: 7%;
+	padding-left: 10%;
+	padding-right: 10%;
+	text-align: center;
+	font-size: 1vw;
+	margin-bottom: 3%;
+}
+
+input {
+	border: none;
+	outline: none;
+	height: 3vw;
+	width: 40vw;
+	padding-left: 0.5vw;
+	box-shadow: 0 0 1vw rgba(0,0,0,0.5);
+}
+
+.submit-button {
+	margin-left: 1vw;
+	height: 3vw;
+	width: 9vw;
+	border: none;
+	outline: none !important;
+	background-color: #373252;
+	color: white;
+	box-shadow: 0 0 1vw rgba(0,0,0,0.5);
+}
+
+.night {
+	background-image: url("/static/img/night.jpg");
+}
+
+.day {
+	background-image: url("/static/img/day.jpg");
+}
+
+.evening-morning {
+	background-image: url("/static/img/evening-morning.jpg");
+}
+
+.wrapper {
+	min-height: 100vh;
+}
+
+
+
+
+.alert {
+	text-align: center;
+	width: 30vw;
+	margin: auto;
+	margin-bottom: 1vw;
+	background-color: #373252;
+	color: white;
+	border: none;
+	padding: 0.5vw;
+	border-radius: 0.4vw;
+	margin-top: -3%;
+}
+
+.celsius {
+	font-size: 1.75vw;
+}
+
+.delete-button {
+	background-color: transparent;
+	width: 1.5vw;
+	height: 1vw;
+	margin: 0;
+	padding: 0;
+	border: none;
+	color: white;
+}
+
+.day > .delete-wrapper > form > .delete-button {
+	color: black !important;
+}
+
+.delete-button:focus, .delete-button:active {
+	border: none;
+	outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 0.5vw;
+
+  background:-webkit-linear-gradient(0, blue 50%, white 100%);
+}
+
+::-webkit-scrollbar-track {
+  background:  linear-gradient(0deg, #836273 0%, #373252 100%);
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
