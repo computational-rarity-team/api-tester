@@ -16,7 +16,7 @@ Using the discogs_client library [https://github.com/joalla/discogs_client](http
 “Click user avatar on top right of screen” - “Settings” - “Developers” - “Generate new token “. Directions from [https://python3-discogs-client.readthedocs.io/en/latest/authentication.html#user-token-authentication](https://python3-discogs-client.readthedocs.io/en/latest/authentication.html#user-token-authentication).
 
 ### MusicBrain Bootstraps
-Visit the How to page here to learn how to use MusicBrainAPI https://musicbrainz.org/doc/MusicBrainz_API. Also visit their documentation for helpful tips on how to config your setup
+Visit the How to page here to learn how to use MusicBrainAPI https://musicbrainz.org/doc/MusicBrainz_API. Also view the API documentation for helpful tips on how to config your setup
 https://python-musicbrainzngs.readthedocs.io/en/v0.7.1/api/#musicbrainzngs.set_useragent
 
 ### set up a local venv
