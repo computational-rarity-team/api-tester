@@ -15,8 +15,8 @@
 <p>
 {% if content %}
 	<h2> Search Results </h2>
-	{% for release in content %}
-		{{ release.title }}
+	{% for record in content.artists %}
+		{{ record.name }}
 		<br/>
 	{% endfor %}
 {% endif %}
