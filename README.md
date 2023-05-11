@@ -21,7 +21,7 @@ Run `python3 -m venv env` or similar command to instantiate a new virtual enviro
 
 Then run `source env/bin/activate` to enter that environment
 
-Finally run `pip3 -r requirements.txt` or similar to get all libraries in the requirements.txt file
+Finally run `pip3 install -r requirements.txt` or similar to get all libraries in the requirements.txt file
 
 ### export the token variable
 
